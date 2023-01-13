@@ -1,0 +1,20 @@
+
+#heading{
+    padding: 30px;
+
+}
+
+.mx-5{
+    padding-left: 180px;
+    padding-right: 180px;
+    margin: auto;
+}
+
+#addplant{
+    text-align: center;
+} 
+
+
+.table {
+	border: 1px solid;
+}

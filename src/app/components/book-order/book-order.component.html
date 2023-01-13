@@ -1,0 +1,117 @@
+<div>
+  <div id="heading">
+    <h1 class="text-center" style="color: #16213e">Book Plant Order</h1>
+  </div>
+
+  
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Order Details</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formValue">
+            <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label"
+                >Plant Id</label
+              >
+              <input
+                type="text"
+                formControlName="plantId"
+                class="form-control"
+                id="formGroupExampleInput"
+                placeholder="Give Plant Id"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label"
+                >Coupan Id</label
+              >
+              <input
+                type="text"
+                formControlName="coupanId"
+                class="form-control"
+                id="formGroupExampleInput2"
+                placeholder="Give Coupan Id"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label"
+                >Quantity</label
+              >
+              <input
+                type="text"
+                formControlName="orderQuantity"
+                class="form-control"
+                id="formGroupExampleInput2"
+                placeholder="Give Quantity"
+              />
+            </div>
+            <button
+              type="button"
+              class="btn btn-outline-danger mx-2"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-success mx-2"
+              (click)="bookOrder()"
+            >
+              Order
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-5">
+    <table class="table text-center table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Plant Id</th>
+          <th scope="col">Plant Name</th>
+          <th scope="col">Plant Desccription</th>
+          <th scope="col">Plant Cost</th>
+        </tr>
+      </thead>
+      <tbody class="table-borderless">
+        <tr *ngFor="let row of allPlant">
+          <td>{{ row.plantId }}</td>
+          <td>{{ row.plantName }}</td>
+          <td>{{ row.plantDesccription }}</td>
+          <td>{{ row.plantCost }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="bookorder">
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-outline-primary mx-4 my-3"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      id="bookorder"
+    >
+      Book Order
+    </button>
+  </div>
+</div>
